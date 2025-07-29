@@ -93,7 +93,7 @@ export const managers = [
     //   "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
     //   "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
     //   "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-         "philosophy": "While you celebrated my losses and called it the dark ages, I was studying every weakness, every move, every smug little victory you thought you earned. You’ve mistaken silence for surrender. That was your first mistake. I’m not here to rebuild. I’m here to remind you who I am. This league used to fear me. Soon... it will again. <br>                  I’m not a monster… I’m inevitable", // (optional)
+         "philosophy": "While you celebrated my losses and called it the dark ages, I was studying every weakness, every move, every smug little victory you thought you earned. You’ve mistaken silence for surrender. That was your first mistake. I’m not here to rebuild. I’m here to remind you who I am. This league used to fear me. Soon... it will again. <br>" "<div align="center">"I’m not a monster… I’m inevitable.</div>I’m not a monster… I’m inevitable", // (optional)
     //   "tradingScale": 10, // 1 - 10 (optional)
     //   "preferredContact": "Text",  // (optional) 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
     },
