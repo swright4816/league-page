@@ -93,7 +93,7 @@ export const managers = [
     //   "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
     //   "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
     //   "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-         "philosophy": "While you celebrated my losses and called it the dark ages, I was studying every weakness, every move, every smug little victory you thought you earned. You’ve mistaken silence for surrender. That was your first mistakee. I’m not here to rebuild. I’m here to remind you who I am. This league used to fear me. Soon... it will again. I’m not a monster… I’m inevitable", // (optional)
+         "philosophy": "While you celebrated my losses and called it the dark ages, I was studying every weakness, every move, every smug little victory you thought you earned. You’ve mistaken silence for surrender. That was your first mistake. I’m not here to rebuild. I’m here to remind you who I am. This league used to fear me. Soon... it will again. I’m not a monster… I’m inevitable", // (optional)
     //   "tradingScale": 10, // 1 - 10 (optional)
     //   "preferredContact": "Text",  // (optional) 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
     },
@@ -117,7 +117,7 @@ export const managers = [
     //   "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
     //   "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
     //   "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-         "philosophy": "“Truth is optional. Winning isn’t.”", // (optional)
+         "philosophy": "“If I can get you second-guessing your lineup, doubting a trade, panicking over “league collusion”… then I’ve already won. I plant the seed, step back, and watch the paranoia bloom. The weak tilt. The loud get sloppy. And by the time they realize what’s happening, I’ve already made my move. You don’t need to outplay the league—you just need to make the league outplay itself. <p> There is no good and evil… there is only power, and those too weak to seek it.", // (optional)
     //   "tradingScale": 10, // 1 - 10 (optional)
     //   "preferredContact": "Text",  // (optional) 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
     },
