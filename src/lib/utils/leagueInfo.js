@@ -7,12 +7,13 @@ export const enableBlog = false; // requires VITE_CONTENTFUL_ACCESS_TOKEN and VI
 
 /*   STEP 2   */
 export const homepageText = `
-  <p>Test 1.</p>
-  <p> Test 2.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Welcome to the Champion’s Club</p>
+  <p>Where Legacies Are Built. Not Borrowed.</p>
+  <p>This isn’t your average fantasy football league. The Champion’s Club is a dynasty league for the bold, the strategic, and the relentless. Here, you're not just drafting for the season — you’re building an empire. Every trade, every pick, and every decision carries weight beyond just Week 1. Because when you're in the Club, you're not playing for a trophy. You're playing for legacy.</p>
+  <p>Founded on grit, rivalry, and years of heated competition, the Champion’s Club is where friendships are tested, dynasties are forged, and legends are written. Whether you're a long-standing titan defending your turf or a rising contender eyeing the throne, every season is a fresh chance to etch your name into Club history.</p>
+  <p>Get your roster ready. Check the waivers. Lock in those trades. And above all, bring the fire.
+Because in the Champion’s Club, only one can rule — but everyone remembers the journey.</p>
+  <p></p>
 `;
 
 /*   STEP 3   */
