@@ -45,7 +45,7 @@ export const managers = [
        "favoritePlayer": 8112, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
        "valuePosition": "Picks", // (optional) Favorite position (QB, WR, RB, TE, etc.)
        "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-       "philosophy": "Aggressive moves, bold trades, and long-term vision — I believe in striking early and laying the foundation for a dynasty that dominates for years.",
+       "philosophy": "We don’t follow trends.<br>We create ecosystems.<br><br>We don’t react.<br>We orchestrate.<br><br>Others build teams.<br>We build legacies.<br><br>While they panic over injuries,<br>we're already reconfiguring the timeline.<br><br>While they argue over fairness,<br>we’re manipulating outcomes with surgical precision.<br><br>This isn’t about luck.<br>It’s about leverage.<br>Control. Vision. Execution.<br><br>We wrote the rules.<br>Then we rewrote the game.<br><br><em>“By the time they make a move, we’ve already made history.”</em>",
        "tradingScale": 8, // 1 - 10
        "preferredContact": "Sleeper", // 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
      },
