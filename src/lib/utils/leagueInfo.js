@@ -32,7 +32,7 @@ export const managers = [
        "name": "Samson",
     //   "tookOver": 2020, // (optional) used if a manager took over a team, delete this line or change to null otherwise
        "location": "Saint Louis", // (optional)
-    //   "bio": "Lorem ipsum...",
+         "bio":  "The man.<br>The myth.<br>The legend.<br><br>Every league has a villain.<br>Every league has a genius.<br><strong>This one got both — and they call him Commish.</strong><br><br>He doesn’t just play the game — <strong>he built it</strong>.<br>The Commish isn’t your average manager.<br>He’s the architect behind every rule, the keeper of the schedules, and the one who watches from above as the rest of you scramble for relevance.<br><br>You draft.<br>He manipulates.<br>You react.<br><strong>He’s already five moves ahead.</strong><br><br>There are whispers of collusion.<br>Accusations of favoritism.<br>But the truth?<br><br><strong>He’s just better than you. Always has been.</strong><br><br>The Commish doesn’t chase trophies.<br>He designs the path to them —<br>then strolls down it like he owns the place.",
     //   "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
        "favoriteTeam": "lar", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
