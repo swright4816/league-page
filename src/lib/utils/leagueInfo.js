@@ -224,7 +224,7 @@ export const managers = [
          "name": "Joe",
     //   "tookOver": 2020, // (DEPRECATED! You don't need to use this anymore) (optional) used if a manager took over a team, delete this line or change to null otherwise
     //   "location": "Brooklyn", // (optional)
-    //   "bio": "Lorem ipsum...",
+         "bio": "<br> Air horns. Air horns. Air horns. Air horns.<br><br>Joe didn’t ask to join the league. In fact, we’re still not entirely sure he knows he’s in it. <em>Comedy.</em><br><br>But seriously — Joe didn’t want to play. He thought fantasy would ruin football Sundays. The stress. The overthinking. The betrayal of rooting against your own team.<br>And worst of all… the thought of losing to Tim (which happened twice, both times in blowout fashion).<br><br>But temptation won.<br><br>And now? He’s fresh off his rookie season with a 5th place finish, the second-highest lineup IQ in the league, and more roster updates than he’d like to admit.<br><br>He plays it cool. Pretends it’s all beneath him.<br>He doesn’t talk trades. He doesn’t talk trash. Honestly, he barely talks football.<br><br>But those who know, know: Joe is sweating <strong>every</strong> Sunday.<br>He looks like he’s one missed extra point away from leaving the league—<br>and yet somehow... he’s still here, calm on the surface, chasing the championship.",
     //   "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
     //   "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
