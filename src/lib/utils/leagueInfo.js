@@ -176,7 +176,7 @@ export const managers = [
          "name": "Cano",
     //   "tookOver": 2020, // (DEPRECATED! You don't need to use this anymore) (optional) used if a manager took over a team, delete this line or change to null otherwise
     //   "location": "Brooklyn", // (optional)
-       "bio": "",
+         "bio": "In every league meeting, he speaks first.<br><br>Outspoken. Unapologetic. Unshaken.<br><strong>Cano</strong> doesn’t whisper opinions — he launches them like proton torpedoes. You might not always agree, but in a galaxy of noise, <strong>his voice carries weight</strong>.<br><br>His squad, <strong>The Love Strikes Back</strong>, is a force of balance — fierce in battle, strategic in motion, and always, always in the hunt.<br>Year after year, he stands at the edge of glory. He’s finished second more times than most have made the playoffs.<br><br>But the championship? It remains just beyond the reach of his outstretched hand.<br><br>Some say he's cursed.<br>Others say he's destined.<br><br>But make no mistake — this isn’t a man haunted by defeat.<br>This is a commander biding his time, refining his plans, waiting for the stars to align.<br><br><strong>The galaxy has not heard the last of The Love Strikes Back.</strong>",
     //   "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
          "favoriteTeam": "gb", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
@@ -189,7 +189,7 @@ export const managers = [
     //   "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
          "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
          "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-    //   "philosophy": "Your fantasy team's philosophy", // (optional)
+         "philosophy": "We do not panic.<br>We do not reach.<br>We move with precision. We draft with intent.<br>We are guided not by hype… but by instinct.<br><br>Ours is not a team built on luck — but on legacy.<br>Others chase flash. We pursue control.<br>The standings may not yet bear our name,<br>but the league knows who to fear when the matchups matter.<br><br>We speak boldly — because we’ve earned the right.<br>And when the stars align…<br>we strike.<br><br><em>The strike begins. The league ends. Execute FF Order 66.</em>", // (optional)
          "tradingScale": 7, // 1 - 10 (optional)
          "preferredContact": "Carrier Pigeon",  // (optional) 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
      },
