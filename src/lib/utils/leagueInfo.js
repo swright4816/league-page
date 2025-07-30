@@ -33,7 +33,7 @@ export const managers = [
     //   "tookOver": 2020, // (optional) used if a manager took over a team, delete this line or change to null otherwise
        "location": "Saint Louis", // (optional)
          "bio":  "The man.<br>The myth.<br>The legend.<br><br>Every league has a villain.<br>Every league has a genius.<br><strong>This one got both — and they call him Commish.</strong><br><br>He doesn’t just play the game — <strong>he built it</strong>.<br>The Commish isn’t your average manager.<br>He’s the architect behind every rule, the keeper of the schedules, and the one who watches from above as the rest of you scramble for relevance.<br><br>You draft.<br>He manipulates.<br>You react.<br><strong>He’s already five moves ahead.</strong><br><br>There are whispers of collusion.<br>Accusations of favoritism.<br>But the truth?<br><br><strong>He’s just better than you. Always has been.</strong><br><br>The Commish doesn’t chase trophies.<br>He designs the path to them —<br>then strolls down it like he owns the place.",
-    //   "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
+         "photo": "/managers/tyler_min.jpg", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
        "favoriteTeam": "lar", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
        "mode": "Rebuild", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
@@ -105,7 +105,7 @@ export const managers = [
     //   "tookOver": 2020, // (DEPRECATED! You don't need to use this anymore) (optional) used if a manager took over a team, delete this line or change to null otherwise
     //   "location": "Brooklyn", // (optional)
          "bio": "A master of misdirection, Tyler thrives in the shadows of league politics. While publicly casting suspicion on every new rule proposal—always with a smug “just asking questions”—he’s quietly orchestrating schemes of his own behind the scenes. No rule change goes unchallenged, no commissioner move unmocked… yet somehow, his fingerprints are always just out of sight. In a league full of strategists, he plays the long con. Trust him at your own peril...",
-         "photo": "/managers/tyler_min.jpg", // square ratio recommended (no larger than 500x500)
+         "photo": "/managers/tyler3.jpg", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
          "favoriteTeam": "lar", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
          "mode": "Win Now", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
