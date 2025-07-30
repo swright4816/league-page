@@ -128,7 +128,7 @@ export const managers = [
          "name": "Tim",
     //   "tookOver": 2020, // (DEPRECATED! You don't need to use this anymore) (optional) used if a manager took over a team, delete this line or change to null otherwise
     //   "location": "Brooklyn", // (optional)
-    //   "bio": "Lorem ipsum...",
+         "bio": "Tim doesn’t scheme in shadows — he casts them.<br>Loud, confident, and utterly convinced of his supremacy, he doesn't just want to win — he wants you to know it’s inevitable.<br><br>His presence looms over every matchup. His confidence borders on madness. He believes the league bends to strength, and his will is unmatched.<br><br>You can doubt him. Mock him. Root against him.<br>It won’t matter. He’ll still believe his team is the best in the league.",
     //   "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
     //   "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
@@ -141,7 +141,7 @@ export const managers = [
     //   "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
     //   "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
     //   "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-    //   "philosophy": "Your fantasy team's philosophy", // (optional)
+         "philosophy": "<br> I’ll be waiting. Watching. Unshaken.<br><br><em>“You cannot hide. I see you. There is no escape.”</em><br><br>One ring. One champion.<br><strong>All shall fall.</strong>", // (optional)
     //   "tradingScale": 10, // 1 - 10 (optional)
     //   "preferredContact": "Text",  // (optional) 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
     },
