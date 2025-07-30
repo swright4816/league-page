@@ -80,7 +80,7 @@ export const managers = [
          "name": "Cody",
     //   "tookOver": 2020, // (DEPRECATED! You don't need to use this anymore) (optional) used if a manager took over a team, delete this line or change to null otherwise
     //   "location": "Brooklyn", // (optional)
-         "bio": "<br> Once the undisputed villain of the league, Cody built his legacy on cunning trades, cold-blooded timing, and a talent for turning chaos into wins. His name inspired groans. His success? Hated—but respected. But empires fall. The past few seasons have been bleak, only a fading shadow of the villain he was. The league mocks him now, calling it the dark ages. But that’s the mistake. He’s not gone. He’s waiting. Villains don’t retire. They reload...",
+         "bio": "<br> Once the <strong>undisputed villain</strong> of the league, Cody built his legacy on cunning trades, cold-blooded timing, and a talent for turning chaos into wins.<br>His name inspired groans.<br>His success? <em>Hated</em> — but respected.<br><br>But empires fall.<br><br>The past few seasons have been bleak — only a fading shadow of the villain he was.<br>The league mocks him now, calling it <em>“the dark ages.”</em><br><br>But that’s the mistake.<br><br>He’s not gone.<br><strong>He’s waiting.</strong><br><br><em>Villains don’t retire. They reload...</em>",
     //   "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
     //   "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
