@@ -69,7 +69,7 @@ export const managers = [
     //   "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
          "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
     //   "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-         "philosophy": "<br> Fuck draft picks... Legends aren’t built on patience—they’re carved from chaos and desperation.", // (optional)
+         "philosophy": "Fuck draft picks... Legends aren’t built on patience—they’re carved from chaos and desperation.", // (optional)
          "tradingScale": 5, // 1 - 10 (optional)
     //   "preferredContact": "Text",  // (optional) 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
      },
