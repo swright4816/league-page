@@ -45,7 +45,7 @@ export const managers = [
        "favoritePlayer": 8112, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
        "valuePosition": "DP", // (optional) Favorite position (QB, WR, RB, TE, etc.)
        "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-       "philosophy": "Aggressive moves, bold trades, and long-term vision — I believe in striking early and laying the foundation for a dynasty that dominates for years.",
+       "philosophy": "<br> Aggressive moves, bold trades, and long-term vision — I believe in striking early and laying the foundation for a dynasty that dominates for years.",
        "tradingScale": 8, // 1 - 10
        "preferredContact": "Sleeper", // 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
      },
@@ -56,7 +56,7 @@ export const managers = [
          "name": "Bee",
     //   "tookOver": 2020, // (DEPRECATED! You don't need to use this anymore) (optional) used if a manager took over a team, delete this line or change to null otherwise
     //   "location": "Brooklyn", // (optional)
-         "bio": "Brandon has never tasted the glory of a championship. Now? He’s snapped. Brandon has sold off every draft pick for the next three seasons—future be damned—all in a reckless, glorious bid to hoist the trophy this year. He’s mortgaged his future, his depth, and possibly his dignity. No trade is too wild. No player is off-limits. No move makes “sense.” He’s not building a dynasty. He’s staging a last stand. Win or die trying—and he’s cool with either.",
+         "bio": "<br> Brandon has never tasted the glory of a championship. Now? He’s snapped. Brandon has sold off every draft pick for the next three seasons—future be damned—all in a reckless, glorious bid to hoist the trophy this year. He’s mortgaged his future, his depth, and possibly his dignity. No trade is too wild. No player is off-limits. No move makes “sense.” He’s not building a dynasty. He’s staging a last stand. Win or die trying—and he’s cool with either.",
     //   "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
          "favoriteTeam": "lar", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
@@ -67,9 +67,9 @@ export const managers = [
     //     image: "/managers/rival.jpg", // either a specific manager photo or '/managers/everyone.png' or '/managers/question.png'
          },
     //   "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
-         "valuePosition": "Picks", // (optional) Favorite position (QB, WR, RB, TE, etc.)
+         "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
     //   "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-         "philosophy": "Fuck draft picks... Legends aren’t built on patience—they’re carved from chaos and desperation.", // (optional)
+         "philosophy": "<br> Fuck draft picks... Legends aren’t built on patience—they’re carved from chaos and desperation.", // (optional)
          "tradingScale": 5, // 1 - 10 (optional)
     //   "preferredContact": "Text",  // (optional) 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
      },
@@ -80,7 +80,7 @@ export const managers = [
          "name": "Cody",
     //   "tookOver": 2020, // (DEPRECATED! You don't need to use this anymore) (optional) used if a manager took over a team, delete this line or change to null otherwise
     //   "location": "Brooklyn", // (optional)
-         "bio": "Once the undisputed villain of the league, Cody built his legacy on cunning trades, cold-blooded timing, and a talent for turning chaos into wins. His name inspired groans. His success? Hated—but respected. But empires fall. The past few seasons have been bleak, only a fading shadow of the villain he was. The league mocks him now, calling it the dark ages. But that’s the mistake. He’s not gone. He’s waiting. Villains don’t retire. They reload..",
+         "bio": "<br> Once the undisputed villain of the league, Cody built his legacy on cunning trades, cold-blooded timing, and a talent for turning chaos into wins. His name inspired groans. His success? Hated—but respected. But empires fall. The past few seasons have been bleak, only a fading shadow of the villain he was. The league mocks him now, calling it the dark ages. But that’s the mistake. He’s not gone. He’s waiting. Villains don’t retire. They reload..",
     //   "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
     //   "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
@@ -93,7 +93,7 @@ export const managers = [
     //   "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
     //   "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
     //   "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-         "philosophy": "While you celebrated my losses and called it the dark ages, I was studying every weakness, every move, every smug little victory you thought you earned. You’ve mistaken silence for surrender. That was your first mistake. I’m not here to rebuild. I’m here to remind you who I am. This league used to fear me. Soon... it will again. <br> <br> <div align=\"center\">“I’m not a monster… I’m inevitable.”</div>", // (optional)
+         "philosophy": "<br> While you celebrated my losses and called it the dark ages, I was studying every weakness, every move, every smug little victory you thought you earned. You’ve mistaken silence for surrender. That was your first mistake. I’m not here to rebuild. I’m here to remind you who I am. This league used to fear me. Soon... it will again. <br> <br> “I’m not a monster… I’m inevitable.", // (optional)
     //   "tradingScale": 10, // 1 - 10 (optional)
     //   "preferredContact": "Text",  // (optional) 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
     },
@@ -104,7 +104,7 @@ export const managers = [
          "name": "Tyler",
     //   "tookOver": 2020, // (DEPRECATED! You don't need to use this anymore) (optional) used if a manager took over a team, delete this line or change to null otherwise
     //   "location": "Brooklyn", // (optional)
-         "bio": "A master of misdirection, Tyler thrives in the shadows of league politics. While publicly casting suspicion on every new rule proposal—always with a smug “just asking questions”—he’s quietly orchestrating schemes of his own behind the scenes. No rule change goes unchallenged, no commissioner move unmocked… yet somehow, his fingerprints are always just out of sight. In a league full of strategists, he plays the long con. Trust him at your own peril...",
+         "bio": "<br> A master of misdirection, Tyler thrives in the shadows of league politics. While publicly casting suspicion on every new rule proposal—always with a smug “just asking questions”—he’s quietly orchestrating schemes of his own behind the scenes. No rule change goes unchallenged, no commissioner move unmocked… yet somehow, his fingerprints are always just out of sight. In a league full of strategists, he plays the long con. Trust him at your own peril...",
          "photo": "/managers/tyler_min.jpg", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
     //   "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
@@ -117,7 +117,7 @@ export const managers = [
     //   "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
     //   "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
     //   "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-         "philosophy": "“If I can get you second-guessing your lineup, doubting a trade, panicking over “league collusion”… then I’ve already won. I plant the seed, step back, and watch the paranoia bloom. The weak follow. The loud get sloppy. And by the time they realize what’s happening, I’ve already made my move. You don’t need to outplay the league—you just need to make the league outplay itself. <br> <br> <div align=\"center\">“There is no good and evil…</div> <div align=\"center\">There is only power, and those too weak to seek it.”</div>", // (optional)
+         "philosophy": "“<br> If I can get you second-guessing your lineup, doubting a trade, panicking over “league collusion”… then I’ve already won. I plant the seed, step back, and watch the paranoia bloom. The weak follow. The loud get sloppy. And by the time they realize what’s happening, I’ve already made my move. You don’t need to outplay the league—you just need to make the league outplay itself. <br> <br> There is no good and evil…There is only power, and those too weak to seek it.", // (optional)
     //   "tradingScale": 10, // 1 - 10 (optional)
     //   "preferredContact": "Text",  // (optional) 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
     },
