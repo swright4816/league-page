@@ -80,7 +80,7 @@ export const managers = [
          "name": "Cody",
     //   "tookOver": 2020, // (DEPRECATED! You don't need to use this anymore) (optional) used if a manager took over a team, delete this line or change to null otherwise
     //   "location": "Brooklyn", // (optional)
-         "bio": "<br> Once the undisputed villain of the league, Cody built his legacy on cunning trades, cold-blooded timing, and a talent for turning chaos into wins. His name inspired groans. His success? Hated—but respected. But empires fall. The past few seasons have been bleak, only a fading shadow of the villain he was. The league mocks him now, calling it the dark ages. But that’s the mistake. He’s not gone. He’s waiting. Villains don’t retire. They reload..",
+         "bio": "<br> Once the undisputed villain of the league, Cody built his legacy on cunning trades, cold-blooded timing, and a talent for turning chaos into wins. His name inspired groans. His success? Hated—but respected. But empires fall. The past few seasons have been bleak, only a fading shadow of the villain he was. The league mocks him now, calling it the dark ages. But that’s the mistake. He’s not gone. He’s waiting. Villains don’t retire. They reload...",
     //   "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
     //   "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
@@ -117,7 +117,7 @@ export const managers = [
     //   "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
     //   "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
     //   "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-         "philosophy": "“<br> If I can get you second-guessing your lineup, doubting a trade, panicking over “league collusion”… then I’ve already won. I plant the seed, step back, and watch the paranoia bloom. The weak follow. The loud get sloppy. And by the time they realize what’s happening, I’ve already made my move. You don’t need to outplay the league—you just need to make the league outplay itself. <br> <br> There is no good and evil…There is only power, and those too weak to seek it.", // (optional)
+         "philosophy": "<br> If I can get you second-guessing your lineup, doubting a trade, panicking over “league collusion”… then I’ve already won. I plant the seed, step back, and watch the paranoia bloom. The weak follow. The loud get sloppy. And by the time they realize what’s happening, I’ve already made my move. You don’t need to outplay the league—you just need to make the league outplay itself. <br> <br> There is no good and evil…There is only power, and those too weak to seek it.", // (optional)
     //   "tradingScale": 10, // 1 - 10 (optional)
     //   "preferredContact": "Text",  // (optional) 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
     },
