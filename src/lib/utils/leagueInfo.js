@@ -148,15 +148,15 @@ export const managers = [
   
    {
   //  "roster": 6,  // ID of the roster that the manager manages (look at the order of the power rankings graph)
-       "managerID": "1117977887900078080",
-       "name": "John",
+         "managerID": "1117977887900078080",
+         "name": "John",
     //   "tookOver": 2020, // (optional) used if a manager took over a team, delete this line or change to null otherwise
     //   "location": "Brooklyn", // (optional)
-    //   "bio": "Lorem ipsum...",
+         "bio":  "He spoke like a commander, boasted like a king, and fought with wit as his blade.<br> He strutted into last season like a conquering general.<br><br> But when the final whistle blew… there was no glory. No crown. Just silence.<br> And the cold, humiliating sting of last place.<br><br>Mocked. Forgotten.<br> Buried beneath the standings he once scoffed at.<br><br> But a true warrior doesn’t stay down. Not for long.<br><br> Now, from the ashes of defeat, <strong>John rises</strong> — fueled by revenge, sharpened by shame, and rebuilt for blood.<br> He trains in the shadows, watches every snap, and prepares to strike where it hurts most: <strong>your scoreboard</strong>.<br><br> This season… he isn’t here for laughs.<br> <strong>He’s here for redemption.</strong><br><br>",
     //   "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
     //   "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
-       "mode": "Rebuild", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
+         "mode": "Rebuild", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
      //  "rival": {
     //     name: "Rival", // Can be anything (usually your rival's name)
     //     link: 6, // manager array number within this array, or null to link back to all managers page
