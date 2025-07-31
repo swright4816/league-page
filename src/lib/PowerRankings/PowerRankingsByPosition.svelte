@@ -24,6 +24,7 @@
             const allPlayers = roster.players
                 .map(pid => players[pid])
                 .filter(p => p && p.pos && p.wi && p.ln);
+            console.log(`Roster ${rosterID} allPlayers:`, allPlayers);
 
             const getProjectedStarters = (week) => {
                 const projected = allPlayers.map(p => ({
@@ -34,6 +35,7 @@
                         wi: p.wi
                     }], week, leagueData)
                 }));
+                console.log(`Week ${week} projected scores:`, projected.map(p => ({ id: p.player.player_id, score: p.score })));
 
                 const byPos = { QB: [], RB: [], WR: [], TE: [], FLEX: [] };
                 for (const p of projected) {
@@ -41,6 +43,7 @@
                     if (byPos[pos]) byPos[pos].push(p);
                     if (['RB', 'WR', 'TE'].includes(pos)) byPos.FLEX.push(p);
                 }
+                console.log(`Week ${week} byPos:`, byPos);
 
                 for (const pos in byPos) {
                     byPos[pos].sort((a, b) => b.score - a.score);
@@ -56,10 +59,12 @@
                 const flexPool = byPos.FLEX.filter(p => !usedIds.has(p.player.player_id));
                 starters.push(...flexPool.slice(0, Math.min(3, flexPool.length))); // 3 FLEX
 
+                console.log(`Week ${week} starters:`, starters);
+
                 return starters.map(p => ({
                     name: p.player.ln,
                     pos: p.player.pos,
-                    wi: p.wi
+                    wi: p.player.wi
                 }));
             };
 
@@ -74,16 +79,25 @@
 
             for (let i = week; i < seasonEnd; i++) {
                 const starters = getProjectedStarters(i);
-                rosterPower.powerScore += predictScores(starters, i, leagueData);
+                const score = predictScores(starters, i, leagueData);
+                console.log(`Roster ${rosterID} week ${i} starters:`, starters);
+                console.log(`Roster ${rosterID} week ${i} score:`, score);
+                rosterPower.powerScore += score;
             }
 
+            console.log(`Roster ${rosterID} final powerScore:`, rosterPower.powerScore);
             if (rosterPower.powerScore > max) max = rosterPower.powerScore;
             rosterPowers.push(rosterPower);
         }
 
+        console.log('Max powerScore:', max);
+        console.log('Roster powers before normalization:', rosterPowers);
+
         for (const rosterPower of rosterPowers) {
             rosterPower.powerScore = max > 0 ? round(rosterPower.powerScore / max * 100) : 0;
         }
+
+        console.log('Roster powers after normalization:', rosterPowers);
 
         const powerGraph = {
             stats: rosterPowers,
@@ -96,6 +110,7 @@
         };
 
         graphs = [generateGraph(powerGraph, leagueData.season)];
+        console.log('Generated graphs:', graphs);
     };
 
     buildRankings();
