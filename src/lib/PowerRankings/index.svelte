@@ -1,6 +1,7 @@
 <script>
     import {getNflState, getLeagueRosters, getLeagueTeamManagers, waitForAll, loadPlayers, getLeagueData} from '$lib/utils/helper';
     import PowerRankingsDisplay from './PowerRankingsDisplay.svelte';
+    import PowerRankingsByPosition from './PowerRankingsByPosition.svelte';
     import LinearProgress from '@smui/linear-progress';
     
     const helperPromises = waitForAll(
@@ -31,6 +32,8 @@
 {:then [nflState, rostersData, leagueTeamManagers, leagueData, playersInfo]}
     {#if leagueData.status != 'complete'}
         <PowerRankingsDisplay {nflState} {rostersData} {leagueTeamManagers} {leagueData} {playersInfo} />
+        <PowerRankingsByPosition {nflState} {rostersData} {leagueTeamManagers} {leagueData} {playersInfo} />
+
     {/if}
 {:catch error}
 	<!-- promise was rejected -->
