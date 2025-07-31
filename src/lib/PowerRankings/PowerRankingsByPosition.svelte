@@ -114,6 +114,15 @@
 
 {#if validGraph}
   <div class="enclosure">
-    <BarChart {graphs} bind:curGraph={curGraph} {leagueTeamManagers} />
+    <label style="margin: 1rem 0; display: block; text-align: center;">
+      <strong>Select Position:</strong>
+      <select bind:value={curGraph}>
+        {#each positions as pos, i}
+          <option value={i}>{pos}</option>
+        {/each}
+      </select>
+    </label>
+
+    <BarChart {graphs} bind:curGraph {leagueTeamManagers} />
   </div>
 {/if}
