@@ -52,7 +52,7 @@
             const allPlayers = roster.players
                 .map(pid => players[pid])
                 .filter(p => p && p.pos && p.wi && p.ln);
-            console.log(`Roster ${rosterID} allPlayers count:`, allPlayers.length, 'sample:', allPlayers[0]?.wi);
+            console.log(`Roster ${rosterID} allPlayers count:`, allPlayers.length, 'sample wi:', allPlayers[0]?.wi);
 
             const getProjectedStarters = (week) => {
                 const projected = allPlayers.map(p => ({
@@ -79,18 +79,39 @@
                 }
 
                 const starters = [];
-                if (byPos.QB.length > 0) starters.push(byPos.QB[0]); // 1 QB
-                starters.push(...byPos.RB.slice(0, Math.min(2, byPos.RB.length))); // 2 RB
-                starters.push(...byPos.WR.slice(0, Math.min(2, byPos.WR.length))); // 2 WR
-                if (byPos.TE.length > 0) starters.push(byPos.TE[0]); // 1 TE
+                const rankedIds = new Set(); // Track players used in QB/RB/WR/TE rankings
 
-                const fixedPositionIds = new Set(starters.map(p => p.player.player_id));
-                const flexPool = byPos.FLEX.filter(p => !fixedPositionIds.has(p.player.player_id));
-                starters.push(...flexPool.slice(0, Math.min(3, flexPool.length))); // 3 FLEX
+                // QB
+                if (byPos.QB.length > 0) {
+                    starters.push(byPos.QB[0]);
+                    rankedIds.add(byPos.QB[0].player.player_id);
+                }
+
+                // RB (top 2 for RB ranking)
+                const rbStarters = byPos.RB.slice(0, Math.min(2, byPos.RB.length));
+                starters.push(...rbStarters);
+                rbStarters.forEach(rb => rankedIds.add(rb.player.player_id));
+
+                // WR (top 2 for WR ranking)
+                const wrStarters = byPos.WR.slice(0, Math.min(2, byPos.WR.length));
+                starters.push(...wrStarters);
+                wrStarters.forEach(wr => rankedIds.add(wr.player.player_id));
+
+                // TE
+                if (byPos.TE.length > 0) {
+                    starters.push(byPos.TE[0]);
+                    rankedIds.add(byPos.TE[0].player.player_id);
+                }
+
+                // FLEX (exclude QB and ranked players)
+                const flexPool = byPos.FLEX.filter(p => !rankedIds.has(p.player.player_id));
+                const flexStarters = flexPool.slice(0, Math.min(3, flexPool.length));
+                starters.push(...flexStarters);
 
                 const usedIds = new Set(starters.map(p => p.player.player_id));
-                console.log(`Roster ${rosterID} week ${week} starters count:`, starters.length);
-                return { starters, usedIds, fixedPositionIds };
+                console.log(`Roster ${rosterID} week ${week} starters count:`, starters.length, 'rankedIds:', [...rankedIds]);
+
+                return { starters, usedIds, rankedIds };
             };
 
             const rosterPower = {
@@ -109,7 +130,7 @@
             if (week >= seasonEnd) seasonOver = true;
 
             for (let i = week; i < seasonEnd; i++) {
-                const { starters, usedIds, fixedPositionIds } = getProjectedStarters(i);
+                const { starters, usedIds, rankedIds } = getProjectedStarters(i);
                 const starterPlayers = starters.map(p => ({
                     name: p.player.ln,
                     pos: p.player.pos,
@@ -157,9 +178,9 @@
                     console.log(`Roster ${rosterID} week ${i} TE ${te.player.ln} score:`, teScore);
                 }
 
-                // FLEX score
+                // FLEX score (exclude QBs and ranked RB/WR/TE)
                 const flexPlayers = allPlayers
-                    .filter(p => ['RB', 'WR', 'TE'].includes(p.pos) && !fixedPositionIds.has(p.player_id))
+                    .filter(p => ['RB', 'WR', 'TE'].includes(p.pos) && !rankedIds.has(p.player_id))
                     .map(p => ({
                         player: p,
                         score: getPlayerScore(p, i)
