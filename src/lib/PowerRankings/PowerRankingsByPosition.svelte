@@ -35,7 +35,9 @@
         const getPlayerScore = (player, week) => {
             const key = `${player.player_id}-${week}`;
             if (!scoreCache.has(key)) {
-                scoreCache.set(key, predictScores([{ name: player.ln, pos: player.pos, wi: player.wi }], week, leagueData));
+                const score = predictScores([{ name: player.ln, pos: player.pos, wi: player.wi }], week, leagueData);
+                scoreCache.set(key, score);
+                console.log(`Player ${player.player_id} (${player.ln}) week ${week} score:`, score);
             }
             return scoreCache.get(key);
         };
@@ -48,6 +50,7 @@
             const allPlayers = roster.players
                 .map(pid => players[pid])
                 .filter(p => p && p.pos && p.wi && p.ln);
+            console.log(`Roster ${rosterID} allPlayers:`, allPlayers.map(p => ({ id: p.player_id, pos: p.pos, name: p.ln })));
 
             const getProjectedStarters = (week) => {
                 const projected = allPlayers.map(p => ({
@@ -61,6 +64,7 @@
                     if (byPos[pos]) byPos[pos].push(p);
                     if (['RB', 'WR', 'TE'].includes(pos)) byPos.FLEX.push(p);
                 }
+                console.log(`Roster ${rosterID} week ${week} byPos:`, byPos);
 
                 for (const pos in byPos) {
                     byPos[pos].sort((a, b) => b.score - a.score);
@@ -75,6 +79,9 @@
                 const usedIds = new Set(starters.map(p => p.player.player_id));
                 const flexPool = byPos.FLEX.filter(p => !usedIds.has(p.player.player_id));
                 starters.push(...flexPool.slice(0, Math.min(3, flexPool.length))); // 3 FLEX
+
+                console.log(`Roster ${rosterID} week ${week} starters:`, starters.map(s => ({ id: s.player.player_id, pos: s.player.pos, score: s.score })));
+                console.log(`Roster ${rosterID} week ${week} usedIds:`, [...usedIds]);
 
                 return { starters, usedIds };
             };
@@ -103,22 +110,30 @@
                 }));
 
                 // Starters score
-                rosterPower.Starters += predictScores(starterPlayers, i, leagueData);
+                const startersScore = predictScores(starterPlayers, i, leagueData);
+                rosterPower.Starters += startersScore;
+                console.log(`Roster ${rosterID} week ${i} Starters score:`, startersScore);
 
                 // QB score (top QB)
                 const qb = starters.find(s => s.player.pos === 'QB');
                 if (qb) {
-                    rosterPower.QB += getPlayerScore(qb.player, i);
+                    const qbScore = getPlayerScore(qb.player, i);
+                    rosterPower.QB += qbScore;
+                    console.log(`Roster ${rosterID} week ${i} QB score:`, qbScore);
                 }
 
                 // WR score (top 2 WRs)
                 const wrs = starters.filter(s => s.player.pos === 'WR').slice(0, 2);
-                rosterPower.WR += wrs.reduce((sum, p) => sum + getPlayerScore(p.player, i), 0);
+                const wrScore = wrs.reduce((sum, p) => sum + getPlayerScore(p.player, i), 0);
+                rosterPower.WR += wrScore;
+                console.log(`Roster ${rosterID} week ${i} WR score:`, wrScore, 'for WRs:', wrs.map(w => w.player.ln));
 
                 // TE score (top TE)
                 const te = starters.find(s => s.player.pos === 'TE');
                 if (te) {
-                    rosterPower.TE += getPlayerScore(te.player, i);
+                    const teScore = getPlayerScore(te.player, i);
+                    rosterPower.TE += teScore;
+                    console.log(`Roster ${rosterID} week ${i} TE score:`, teScore);
                 }
 
                 // FLEX score (top 3 RB/WR/TE not used as RB/WR/TE starters)
@@ -140,7 +155,10 @@
                     pos: p.player.pos,
                     wi: p.player.wi
                 }));
-                rosterPower.FLEX += predictScores(flexPlayerData, i, leagueData);
+                const flexScore = predictScores(flexPlayerData, i, leagueData);
+                rosterPower.FLEX += flexScore;
+                console.log(`Roster ${rosterID} week ${i} FLEX players:`, flexPlayers.map(p => ({ id: p.player.player_id, pos: p.player.pos, score: p.score })));
+                console.log(`Roster ${rosterID} week ${i} FLEX score:`, flexScore);
 
                 // Bench score (top 5 non-starters)
                 const benchPlayers = allPlayers
@@ -156,8 +174,13 @@
                     pos: p.player.pos,
                     wi: p.player.wi
                 }));
-                rosterPower.Bench += predictScores(benchPlayerData, i, leagueData);
+                const benchScore = predictScores(benchPlayerData, i, leagueData);
+                rosterPower.Bench += benchScore;
+                console.log(`Roster ${rosterID} week ${i} Bench players:`, benchPlayers.map(p => ({ id: p.player.player_id, pos: p.player.pos, score: p.score })));
+                console.log(`Roster ${rosterID} week ${i} Bench score:`, benchScore);
             }
+
+            console.log(`Roster ${rosterID} final scores:`, rosterPower);
 
             // Update max scores
             for (const category of Object.keys(maxByCategory)) {
@@ -175,6 +198,9 @@
             rosterPowersByCategory.Bench.push({ ...rosterPower, powerScore: rosterPower.Bench });
         }
 
+        console.log('Max scores by category:', maxByCategory);
+        console.log('Roster powers before normalization:', rosterPowersByCategory);
+
         // Normalize scores for each category
         for (const category of Object.keys(rosterPowersByCategory)) {
             for (const rosterPower of rosterPowersByCategory[category]) {
@@ -183,6 +209,8 @@
                     : 0;
             }
         }
+
+        console.log('Roster powers after normalization:', rosterPowersByCategory);
 
         // Generate graphs for each category
         graphs = Object.keys(rosterPowersByCategory).map(category => ({
@@ -194,6 +222,8 @@
             field: 'powerScore',
             short: `${category} Power`
         })).map(graph => generateGraph(graph, leagueData.season));
+
+        console.log('Generated graphs:', graphs);
     };
 
     buildRankings();
@@ -201,6 +231,7 @@
     const refreshPlayers = async () => {
         const newPlayersInfo = await loadPlayers(null, true);
         players = newPlayersInfo.players;
+        console.log('Refreshed players:', Object.keys(players));
         buildRankings();
     };
 
