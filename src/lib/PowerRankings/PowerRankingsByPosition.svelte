@@ -1,128 +1,106 @@
-<script>
-  import BarChart from '$lib/BarChart.svelte';
-  import {
-    generateGraph,
-    getTeamFromTeamManagers,
-    round,
-    predictScores,
-    loadPlayers
-  } from '$lib/utils/helper';
+const buildRankings = () => {
+    const rosterPowers = [];
+    let week = nflState.week;
+    if (week == 0) week = 1;
 
-  export let nflState;
-  export let rostersData;
-  export let leagueTeamManagers;
-  export let playersInfo;
-  export let leagueData;
-
-  const rosters = rostersData.rosters || rostersData; // support either shape
-  let players = playersInfo.players;
-
-  let graphs = [];
-  let curGraph = 0;
-  let validGraph = false;
-
-  const positions = ['QB', 'RB', 'WR', 'TE', 'FLEX', 'BENCH'];
-
-  function buildPositionRankings() {
-    const positionStatsByTeam = {};
+    let max = 0;
 
     for (const rosterID in rosters) {
-      const roster = rosters[rosterID];
-      const teamName = getTeamFromTeamManagers(leagueTeamManagers, rosterID) || `Team ${rosterID}`;
+        const roster = rosters[rosterID];
+        if (!roster.players) continue;
 
-      if (!roster.players) continue;
-      validGraph = true;
+        validGraph = true;
 
-      const teamPlayers = roster.players
-        .map(pid => players[pid])
-        .filter(p => p && p.position && p.wi !== undefined);
+        // Filter and map player objects with their projections for a given week
+        const allPlayers = roster.players
+            .map(pid => players[pid])
+            .filter(p => p && p.pos && p.wi);
 
-      const usedPlayerIds = new Set();
-      const posTotals = {};
+        const getProjectedStarters = (week) => {
+            // Map each player to their projected score
+            const projected = allPlayers.map(p => ({
+                player: p,
+                score: predictScores([{
+                    name: p.ln,
+                    pos: p.pos,
+                    wi: p.wi
+                }], week, leagueData)
+            }));
 
-      const posLimits = { QB: 1, RB: 2, WR: 2, TE: 1 };
+            // Group by position
+            const byPos = {
+                QB: [],
+                RB: [],
+                WR: [],
+                TE: [],
+                FLEX: [] // will be reused
+            };
 
-      for (const pos in posLimits) {
-        const selected = teamPlayers
-          .filter(p => p.position === pos)
-          .sort((a, b) => b.wi - a.wi)
-          .slice(0, posLimits[pos]);
+            for (const p of projected) {
+                const pos = p.player.pos;
+                if (byPos[pos]) byPos[pos].push(p);
+                if (['RB', 'WR', 'TE'].includes(pos)) byPos.FLEX.push(p);
+            }
 
-        selected.forEach(p => usedPlayerIds.add(p.player_id));
-        posTotals[pos] = selected.reduce((sum, p) => sum + p.wi, 0);
-      }
+            // Sort positions by projection
+            for (const pos in byPos) {
+                byPos[pos].sort((a, b) => b.score - a.score);
+            }
 
-      // FLEX: best 3 remaining RB/WR/TE
-      const flex = teamPlayers
-        .filter(p => ['RB', 'WR', 'TE'].includes(p.position) && !usedPlayerIds.has(p.player_id))
-        .sort((a, b) => b.wi - a.wi)
-        .slice(0, 3);
+            const starters = [];
 
-      flex.forEach(p => usedPlayerIds.add(p.player_id));
-      posTotals.FLEX = flex.reduce((sum, p) => sum + p.wi, 0);
+            if (byPos.QB.length > 0) starters.push(byPos.QB[0]);
+            starters.push(...byPos.RB.slice(0, 2));
+            starters.push(...byPos.WR.slice(0, 2));
+            if (byPos.TE.length > 0) starters.push(byPos.TE[0]);
 
-      // BENCH: best 5 remaining
-      const bench = teamPlayers
-        .filter(p => !usedPlayerIds.has(p.player_id))
-        .sort((a, b) => b.wi - a.wi)
-        .slice(0, 5);
+            // For FLEX: take top 3 remaining RB/WR/TE not already used
+            const usedIds = new Set(starters.map(p => p.player.player_id));
+            const flexPool = byPos.FLEX.filter(p => !usedIds.has(p.player.player_id));
+            starters.push(...flexPool.slice(0, 3));
 
-      posTotals.BENCH = bench.reduce((sum, p) => sum + p.wi, 0);
+            return starters.map(p => ({
+                name: p.player.ln,
+                pos: p.player.pos,
+                wi: p.player.wi
+            }));
+        }
 
-      positionStatsByTeam[teamName] = posTotals;
+        const rosterPower = {
+            rosterID,
+            manager: getTeamFromTeamManagers(leagueTeamManagers, rosterID),
+            powerScore: 0,
+        };
+
+        const seasonEnd = 18;
+        if (week >= seasonEnd) seasonOver = true;
+
+        for (let i = week; i < seasonEnd; i++) {
+            const starters = getProjectedStarters(i);
+            rosterPower.powerScore += predictScores(starters, i, leagueData);
+        }
+
+        if (rosterPower.powerScore > max) max = rosterPower.powerScore;
+
+        rosterPowers.push(rosterPower);
     }
 
-    // Create graph object for each position
-    graphs = positions.map(pos => {
-      const stats = Object.entries(positionStatsByTeam).map(([manager, posScores]) => ({
-        Manager: manager,
-        [pos]: round(posScores[pos] || 0)
-      }));
+    // Normalize scores to 0–100 scale
+    for (const rosterPower of rosterPowers) {
+        rosterPower.powerScore = round(rosterPower.powerScore / max * 100);
+    }
 
-      return generateGraph({
-        stats,
-        x: 'Manager',
-        y: `${pos} Score`,
-        stat: '',
-        field: pos,
-        header: `${pos} Positional Power Rankings`,
-        short: `${pos} Power`
-      }, leagueData.season);
-    });
-  }
+    const powerGraph = {
+        stats: rosterPowers,
+        x: "Manager",
+        y: "Power Ranking",
+        stat: "",
+        header: "Rest of Season Power Rankings (Starters Only)",
+        field: "powerScore",
+        short: "ROS Starter Power"
+    };
 
-  buildPositionRankings();
-
-  const refreshPlayers = async () => {
-    const newPlayersInfo = await loadPlayers(null, true);
-    players = newPlayersInfo.players;
-    buildPositionRankings();
-  }
-
-  if (playersInfo.stale) {
-    refreshPlayers();
-  }
-</script>
-
-<style>
-  .enclosure {
-    display: block;
-    position: relative;
-    width: 100%;
-  }
-</style>
-
-{#if validGraph}
-  <div class="enclosure">
-    <label style="margin: 1rem 0; display: block; text-align: center;">
-      <strong>Select Position:</strong>
-      <select bind:value={curGraph}>
-        {#each positions as pos, i}
-          <option value={i}>{pos}</option>
-        {/each}
-      </select>
-    </label>
-
-    <BarChart {graphs} bind:curGraph {leagueTeamManagers} />
-  </div>
-{/if}
+    graphs = [
+        generateGraph(powerGraph, leagueData.season),
+    ];
+}
