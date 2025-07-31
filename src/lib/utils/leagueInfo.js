@@ -11,9 +11,8 @@ export const homepageText = `
   <p>Where Legacies Are Built. Not Borrowed.</p>
   <p>This isn’t your average fantasy football league. The Champion’s Club is a dynasty league for the bold, the strategic, and the relentless. Here, you're not just drafting for the season — you’re building an empire. Every trade, every pick, and every decision carries weight beyond just Week 1. Because when you're in the Club, you're not playing for a trophy. You're playing for legacy.</p>
   <p>Founded on grit, rivalry, and years of heated competition, the Champion’s Club is where friendships are tested, dynasties are forged, and legends are written. Whether you're a long-standing titan defending your turf or a rising contender eyeing the throne, every season is a fresh chance to etch your name into Club history.</p>
-  <p>Get your roster ready. Check the waivers. Lock in those trades. And above all, bring the fire.
-Because in the Champion’s Club, only one can rule — but everyone remembers the journey.</p>
-  <p></p>
+  <p>Get your roster ready. Check the waivers. Lock in those trades. And above all, bring the fire. Because in the Champion’s Club, only one can rule — but everyone remembers the journey.</p>
+
 `;
 
 /*   STEP 3   */
