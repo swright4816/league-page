@@ -129,7 +129,7 @@ export const managers = [
     //   "tookOver": 2020, // (DEPRECATED! You don't need to use this anymore) (optional) used if a manager took over a team, delete this line or change to null otherwise
     //   "location": "Brooklyn", // (optional)
          "bio": "Tim doesn’t scheme in shadows — he casts them.<br>Loud, confident, and utterly convinced of his supremacy, he doesn't just want to win — he wants you to know it’s inevitable.<br><br>His presence looms over every matchup. His confidence borders on madness. He believes the league bends to strength, and his will is unmatched.<br><br>You can doubt him. Mock him. Root against him.<br>It won’t matter. He’ll still believe his team is the best in the league.",
-    //   "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
+         "photo": "/managers/tim.jpg", // square ratio recommended (no larger than 500x500)
     //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
          "favoriteTeam": "blt", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
          "mode": "Win Now", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
