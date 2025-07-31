@@ -35,7 +35,7 @@
 
       const teamPlayers = roster.players
         .map(pid => players[pid])
-        .filter(p => p && p.position && p.fantasy_points !== undefined);
+        .filter(p => p && p.position && p.wi !== undefined);
 
       const usedPlayerIds = new Set();
       const posTotals = {};
@@ -45,29 +45,29 @@
       for (const pos in posLimits) {
         const selected = teamPlayers
           .filter(p => p.position === pos)
-          .sort((a, b) => b.fantasy_points - a.fantasy_points)
+          .sort((a, b) => b.wi - a.wi)
           .slice(0, posLimits[pos]);
 
         selected.forEach(p => usedPlayerIds.add(p.player_id));
-        posTotals[pos] = selected.reduce((sum, p) => sum + p.fantasy_points, 0);
+        posTotals[pos] = selected.reduce((sum, p) => sum + p.wi, 0);
       }
 
       // FLEX: best 3 remaining RB/WR/TE
       const flex = teamPlayers
         .filter(p => ['RB', 'WR', 'TE'].includes(p.position) && !usedPlayerIds.has(p.player_id))
-        .sort((a, b) => b.fantasy_points - a.fantasy_points)
+        .sort((a, b) => b.wi - a.wi)
         .slice(0, 3);
 
       flex.forEach(p => usedPlayerIds.add(p.player_id));
-      posTotals.FLEX = flex.reduce((sum, p) => sum + p.fantasy_points, 0);
+      posTotals.FLEX = flex.reduce((sum, p) => sum + p.wi, 0);
 
       // BENCH: best 5 remaining
       const bench = teamPlayers
         .filter(p => !usedPlayerIds.has(p.player_id))
-        .sort((a, b) => b.fantasy_points - a.fantasy_points)
+        .sort((a, b) => b.wi - a.wi)
         .slice(0, 5);
 
-      posTotals.BENCH = bench.reduce((sum, p) => sum + p.fantasy_points, 0);
+      posTotals.BENCH = bench.reduce((sum, p) => sum + p.wi, 0);
 
       positionStatsByTeam[teamName] = posTotals;
     }
