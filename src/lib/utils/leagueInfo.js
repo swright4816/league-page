@@ -1,13 +1,12 @@
  /*   STEP 1   */
 export const leagueID = "1220061871822868480"; // your league ID
-export const leagueName = "Champion's Club"; // your league name
+export const leagueName = "<strong>🏆 Welcome to the <em>Champion’s Club</em></strong>"; // your league name
 export const dues = 100; // (optional) used in template constitution page
 export const dynasty = true; // true for dynasty leagues, false for redraft and keeper
 export const enableBlog = false; // requires VITE_CONTENTFUL_ACCESS_TOKEN and VITE_CONTENTFUL_SPACE environment variables
 
 /*   STEP 2   */
 export const homepageText = `
- <p><strong>🏆 Welcome to the <em>Champion’s Club</em></strong></p>
 <p><strong><em>Where Legacies Are Built. Not Borrowed.</em></strong></p>
 <p>This isn’t your average fantasy football league. <strong>The Champion’s Club</strong> is a dynasty league for the <em>bold</em>, the <em>strategic</em>, and the <em>relentless</em>. Here, you're not just drafting for the season — <strong>you’re building an empire</strong>. Every trade, every pick, every decision carries weight <em>beyond just Week 1</em>. Because when you're in the Club, you're not playing for a trophy — <strong>you're playing for legacy</strong>.</p>
 <p>Founded on <strong>grit</strong>, <strong>rivalry</strong>, and <strong>years of heated competition</strong>, the Champion’s Club is where <em>friendships are tested</em>, <em>dynasties are forged</em>, and <strong>legends are written</strong>. Whether you're a long-standing titan defending your turf or a rising contender eyeing the throne, every season is a fresh chance to <em>etch your name into Club history</em>.</p>
