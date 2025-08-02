@@ -7,12 +7,11 @@ export const enableBlog = false; // requires VITE_CONTENTFUL_ACCESS_TOKEN and VI
 
 /*   STEP 2   */
 export const homepageText = `
-  <p>Welcome to the Champion’s Club</p>
-  <p>Where Legacies Are Built. Not Borrowed.</p>
-  <p>This isn’t your average fantasy football league. The Champion’s Club is a dynasty league for the bold, the strategic, and the relentless. Here, you're not just drafting for the season — you’re building an empire. Every trade, every pick, and every decision carries weight beyond just Week 1. Because when you're in the Club, you're not playing for a trophy. You're playing for legacy.</p>
-  <p>Founded on grit, rivalry, and years of heated competition, the Champion’s Club is where friendships are tested, dynasties are forged, and legends are written. Whether you're a long-standing titan defending your turf or a rising contender eyeing the throne, every season is a fresh chance to etch your name into Club history.</p>
-  <p>Get your roster ready. Check the waivers. Lock in those trades. And above all, bring the fire. Because in the Champion’s Club, only one can rule — but everyone remembers the journey.</p>
-
+ <p><strong>🏆 Welcome to the <em>Champion’s Club</em></strong></p>
+<p><strong><em>Where Legacies Are Built. Not Borrowed.</em></strong></p>
+<p>This isn’t your average fantasy football league. <strong>The Champion’s Club</strong> is a dynasty league for the <em>bold</em>, the <em>strategic</em>, and the <em>relentless</em>. Here, you're not just drafting for the season — <strong>you’re building an empire</strong>. Every trade, every pick, every decision carries weight <em>beyond just Week 1</em>. Because when you're in the Club, you're not playing for a trophy — <strong>you're playing for legacy</strong>.</p>
+<p>Founded on <strong>grit</strong>, <strong>rivalry</strong>, and <strong>years of heated competition</strong>, the Champion’s Club is where <em>friendships are tested</em>, <em>dynasties are forged</em>, and <strong>legends are written</strong>. Whether you're a long-standing titan defending your turf or a rising contender eyeing the throne, every season is a fresh chance to <em>etch your name into Club history</em>.</p>
+<p><strong>Get your roster ready. Check the waivers. Lock in those trades.</strong> And above all, <em>bring the fire</em>. Because in the Champion’s Club, <strong>only one can rule</strong> — but <em>everyone remembers the journey</em>.</p>
 `;
 
 /*   STEP 3   */
