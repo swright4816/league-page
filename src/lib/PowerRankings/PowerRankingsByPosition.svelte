@@ -73,7 +73,7 @@
             x: "Manager",
             y: "Power Ranking",
             stat: "",
-            header: "Rest of Season Power Rankings",
+            header: "Rest of Season Power Rankings (Offense Only)",
             field: "powerScore",
             short: "ROS Power Ranking"
         };
