@@ -53,7 +53,7 @@ export const managers = [
          "name": "Bee",
     //   "tookOver": 2020, // (DEPRECATED! You don't need to use this anymore) (optional) used if a manager took over a team, delete this line or change to null otherwise
     //   "location": "Brooklyn", // (optional)
-         "bio": "Brandon has never tasted the glory of a championship. Now? He’s snapped. Brandon has sold off every draft pick for the next three seasons—future be damned—all in a reckless, glorious bid to hoist the trophy this year. He’s mortgaged his future, his depth, and possibly his dignity. No trade is too wild. No player is off-limits. No move makes “sense.” He’s not building a dynasty. He’s staging a last stand. Win or die trying—and he’s cool with either.",
+         "bio": "Brandon has never tasted the glory of a championship.<br><br>After years of mockery, taunting, and humiliating performances — he’s snapped.<br><br>Brandon has sold off every draft pick for the next three seasons — future be damned — all in a reckless, glorious bid to hoist the trophy <em>this year</em>.<br>He’s mortgaged his future, his depth, and possibly his dignity.<br><br>No trade is too wild.<br>No player is off-limits.<br>No move makes “sense.”<br><br>He’s not building a dynasty.<br>He’s staging a <strong>last stand</strong>.<br><br>Win or die trying…<br><br>Or is there more than meets the eye?<br>Is there a deeper plan buried beneath the chaos?<br><br>One thing is for sure: <strong>all eyes are on him</strong>.<br>Will it pay off — or will it be the death of his team?<br><br>Only time will tell.",
          "photo": "/managers/bee.jpg", // square ratio recommended (no larger than 500x500)
          "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
          "favoriteTeam": "lar", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
@@ -66,7 +66,7 @@ export const managers = [
          "favoritePlayer": 6820, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
          "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
          "rookieOrVets": "Vets", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-         "philosophy": "Fuck draft picks... Legends aren’t built on patience—they’re carved from chaos and desperation.", // (optional)
+         "philosophy": "They think I’ve lost it.<br>That I’ve mortgaged the future. That I’m panicking.<br><br>But what they don’t see… is the plan.<br>Every pick I gave up, every “overpay,” every so-called reckless trade — it’s all by design.<br><br>This isn’t desperation. It’s disruption.<br>I’m not trying to build what they call a “perfect team.” I’m building a <em>winning</em> one.<br><br>You want safe? Go finish 6th.<br>I’m here to change the outcome — not follow the blueprint.<br><br>Call it crazy.<br>Call it risky.<br>But when the dust settles…<br>They’ll call it a championship.<br><br><strong>“We’re not asking for permission — we’re flipping the board.”</strong>", // (optional)
          "tradingScale": 5, // 1 - 10 (optional)
          "preferredContact": "Sleeper",  // (optional) 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
      },
