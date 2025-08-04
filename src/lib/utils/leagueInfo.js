@@ -131,7 +131,7 @@ export const managers = [
          "favoriteTeam": "blt", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
          "mode": "Win Now", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
          "rival": {
-    //     name: "Rival", // Can be anything (usually your rival's name)
+          name: "Rival", // Can be anything (usually your rival's name)
     //     link: 6, // manager array number within this array, or null to link back to all managers page
     //     image: "/managers/rival.jpg", // either a specific manager photo or '/managers/everyone.png' or '/managers/question.png'
          },
@@ -151,20 +151,20 @@ export const managers = [
     //   "location": "Brooklyn", // (optional)
          "bio":  "He spoke like a commander, boasted like a king, and fought with wit as his blade.<br> He strutted into last season like a conquering general.<br><br> But when the final whistle blew… there was no glory. No crown. Just silence.<br> And the cold, humiliating sting of last place.<br><br>Mocked. Forgotten.<br> Buried beneath the standings he once scoffed at.<br><br> But a true warrior doesn’t stay down. Not for long.<br><br> Now, from the ashes of defeat, <strong>John rises</strong> — fueled by revenge, sharpened by shame, and rebuilt for blood.<br> He trains in the shadows, watches every snap, and prepares to strike where it hurts most: <strong>your scoreboard</strong>.<br><br> This season… he isn’t here for laughs.<br> <strong>He’s here for redemption.</strong><br><br>",
          "photo": "/managers/john.jpg", // square ratio recommended (no larger than 500x500)
-    //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
-    //   "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
+        "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
+        "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
          "mode": "Rebuild", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
-     //  "rival": {
-    //     name: "Rival", // Can be anything (usually your rival's name)
+         "rival": {
+          name: "Rival", // Can be anything (usually your rival's name)
     //     link: 6, // manager array number within this array, or null to link back to all managers page
     //     image: "/managers/rival.jpg", // either a specific manager photo or '/managers/everyone.png' or '/managers/question.png'
-    //   },
-    //   "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
-    //   "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
-    //   "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
+        },
+        "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
+        "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
+        "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
          "philosophy": "We don’t chase hype.<br>We don’t fear projections.<br>We build with purpose.<br>We strike with precision.<br>And when the lights are brightest, we do not flinch.<br><br>The draft is war. The season is a battlefield.<br>There are no friends here — only foes and victims.<br>Our loyalty is to the scoreboard. Our currency is wins.<br>Every Sunday, we sharpen. Every matchup, we hunt.<br><br>We don’t talk to prove anything.<br>We win to prove everything.<br><br><em>“Champions aren’t remembered for their words, but their wins. And I will be remembered.”</em>",
-    //   "tradingScale": 8, // 1 - 10
-    //   "preferredContact": "Sleeper DM or Text", // 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
+         "tradingScale": 8, // 1 - 10
+         "preferredContact": "Sleeper DM or Text", // 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
      },
   
     {
@@ -179,7 +179,7 @@ export const managers = [
          "favoriteTeam": "gb", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
          "mode": "Win Now", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
          "rival": {
-    //     name: "Rival", // Can be anything (usually your rival's name)
+          name: "Rival", // Can be anything (usually your rival's name)
     //     link: 6, // manager array number within this array, or null to link back to all managers page
     //     image: "/managers/rival.jpg", // either a specific manager photo or '/managers/everyone.png' or '/managers/question.png'
          },
@@ -203,7 +203,7 @@ export const managers = [
     //   "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
     //   "mode": "Win Now", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
          "rival": {
-    //     name: "Rival", // Can be anything (usually your rival's name)
+          name: "Rival", // Can be anything (usually your rival's name)
     //     link: 6, // manager array number within this array, or null to link back to all managers page
     //     image: "/managers/rival.jpg", // either a specific manager photo or '/managers/everyone.png' or '/managers/question.png'
          },
@@ -227,7 +227,7 @@ export const managers = [
          "favoriteTeam": "tb", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
          "mode": "Win Now", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
          "rival": {
-    //     name: "Rival", // Can be anything (usually your rival's name)
+          name: "Rival", // Can be anything (usually your rival's name)
     //     link: 6, // manager array number within this array, or null to link back to all managers page
     //     image: "/managers/rival.jpg", // either a specific manager photo or '/managers/everyone.png' or '/managers/question.png'
          },
@@ -245,22 +245,22 @@ export const managers = [
          "name": "Alex",
     //   "tookOver": 2020, // (DEPRECATED! You don't need to use this anymore) (optional) used if a manager took over a team, delete this line or change to null otherwise
     //   "location": "Brooklyn", // (optional)
-    //   "bio": "Lorem ipsum...",
+         "bio": "bio": "In a league of shadows—where rivalries burn deep and whispers cast doubt—Alex stands above it.<br><br>He doesn’t fall for the schemes of the league manipulator (<em>aka Littlefinger</em>).<br>He doesn’t fear the villain.<br>He’s not bound by blood—he’d gladly slay Tim for a shot at the championship.<br><br>He’s here for one reason, and one reason only: <strong>to win.</strong><br>And win… he shall.<br><br>But there is no victory without suffering.<br><br>His first season in <em>The Champion’s Club</em> looked like collapse—a rebuild destined to happen.<br>But then came the trades. The moves. The silence between.<br><br>Now the “rebuild” looks more like a <strong>reload</strong>.<br>He’s not crashing the league. He’s embedding.<br>He’s not winning yet… but you feel him closing in.<br><br>And if you’re not paying attention?<br>You’ll wake up in Week 14 and realize Alex just took your playoff spot.",
     //   "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
-    //   "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
-    //   "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
-    //   "mode": "Win Now", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
-    //   "rival": {
-    //     name: "Rival", // Can be anything (usually your rival's name)
+        "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
+        "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
+         "mode": "Win Now", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
+         "rival": {
+          name: "Rival", // Can be anything (usually your rival's name)
     //     link: 6, // manager array number within this array, or null to link back to all managers page
     //     image: "/managers/rival.jpg", // either a specific manager photo or '/managers/everyone.png' or '/managers/question.png'
-    //   },
-    //   "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
-    //   "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
-    //   "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
-    //   "philosophy": "Your fantasy team's philosophy", // (optional)
-    //   "tradingScale": 10, // 1 - 10 (optional)
-    //   "preferredContact": "Text",  // (optional) 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
+        },
+         "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
+        "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
+        "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
+        "philosophy": "<br><em>No loyalty. No alliances. Just wins.</em>", // (optional)
+        "tradingScale": 10, // 1 - 10 (optional)
+        "preferredContact": "Sleeper",  // (optional) 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
     },
   ]
   
