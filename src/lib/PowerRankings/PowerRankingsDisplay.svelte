@@ -44,7 +44,7 @@
             }
             const seasonEnd = 18;
             if(week >= seasonEnd) {
-                seasonOver = true;
+                seasonOver = FALSE;
             }
             for(let i = week; i < seasonEnd; i++) {
                 rosterPower.powerScore += predictScores(rosterPlayers, i, leagueData);
